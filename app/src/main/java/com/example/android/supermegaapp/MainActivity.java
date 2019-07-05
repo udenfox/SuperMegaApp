@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         names.add("Ivan");
         names.add("Michael");
+        names.add("Jake");
 
     }
 
