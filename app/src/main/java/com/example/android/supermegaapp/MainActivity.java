@@ -11,8 +11,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    String boolVar = "false";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
-
-
-        createCar();
 
         fab.setOnClickListener(new View.OnClickListener() {
                                    @Override
@@ -39,20 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void createCar() {
-        CarNew carNew = new CarNew(10f);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        try {
-            boolean secondBool = Boolean.parseBoolean(boolVar);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         return true;
     }
