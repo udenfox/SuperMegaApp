@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         names.add("Andy");
         names.add("Jakob");
         names.add("Jane");
+        names.add("SOME NEW NAME!1");
 
     }
 
