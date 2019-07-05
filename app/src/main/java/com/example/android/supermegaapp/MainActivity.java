@@ -9,7 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<String> names;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
                                }
 
         );
+
+        names = new ArrayList<>();
+
+        names.add("Jake");
+        names.add("Michael");
 
     }
 
