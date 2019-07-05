@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        names = new ArrayList<>();
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         );
 
-        names = new ArrayList<>();
-
+        names.add("Ivan");
         names.add("Jake");
         names.add("Michael");
+        names.add("Andy");
 
     }
 
