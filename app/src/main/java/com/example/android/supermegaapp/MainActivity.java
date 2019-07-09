@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        ValadimirHaiba haiba = new ValadimirHaiba("Vladimir","Ivanovich");
+        Katerina katerina = new Katerina("Oblakevich");
+        Ihor ihor = new Ihor();
+        Cherevatenko dmitry = new Cherevatenko("something");
 
         FloatingActionButton fab = findViewById(R.id.fab);
 
@@ -41,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         names.add("Jake");
         names.add("Michael");
+        names.add("Michael");
+        names.add("Michael");
+        names.add("Michael");
+
+        Maxim maxim = new Maxim();
         Dan = new HorpenkoDan(23);
 
     }
