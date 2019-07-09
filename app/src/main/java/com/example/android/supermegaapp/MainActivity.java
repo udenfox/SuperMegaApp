@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> names;
+    HorpenkoDan Dan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         names.add("Michael");
 
         Maxim maxim = new Maxim();
+        Dan = new HorpenkoDan(23);
 
     }
 
