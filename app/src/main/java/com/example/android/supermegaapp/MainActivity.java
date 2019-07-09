@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         names.add("Michael");
         names.add("Michael");
 
+        Maxim maxim = new Maxim();
+
     }
 
 
