@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         ValadimirHaiba haiba = new ValadimirHaiba("Vladimir","Ivanovich");
         Katerina katerina = new Katerina("Oblakevich");
+        Ihor ihor = new Ihor();
 
         FloatingActionButton fab = findViewById(R.id.fab);
 
