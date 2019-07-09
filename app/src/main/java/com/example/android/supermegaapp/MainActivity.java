@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ValadimirHaiba haiba = new ValadimirHaiba("Vladimir","Ivanovich");
+        Katerina katerina = new Katerina("Oblakevich");
 
         FloatingActionButton fab = findViewById(R.id.fab);
 
