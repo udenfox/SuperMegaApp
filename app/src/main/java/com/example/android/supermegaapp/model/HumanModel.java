@@ -13,7 +13,7 @@ public class HumanModel implements HumanContract.Model {
 
     @Override
     public Intent createHuman(String name, String surname, Integer age) {
-        Log.d(TAG_HUMAN, "createHuman");
+        Log.d(TAG_HUMAN_MODEL, "createHuman");
         Human human = new Human(name, surname, age);
         Intent intent = new Intent(ACTION_SHOW_HUMAN_INFO);
         intent.putExtra(TAG_HUMAN, human);

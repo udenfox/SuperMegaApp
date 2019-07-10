@@ -63,4 +63,9 @@ public class FirstActivity extends AppCompatActivity implements HumanContract.Vi
     public void showMessage(String string) {
         Toast.makeText(this, "Empty " + string, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void closeActivity() {
+        this.finish();
+    }
 }

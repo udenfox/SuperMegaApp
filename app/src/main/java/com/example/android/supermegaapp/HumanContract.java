@@ -10,10 +10,12 @@ public interface HumanContract {
         boolean checkFields();
         void showMessage(String string);
         <T extends android.view.View> T findViewById(@IdRes int id);
+        void closeActivity();
     }
 
     interface Presenter {
         void createButtonWasClicked(Context context);
+        void closeButtonWasClicked();
     }
 
     interface Model {

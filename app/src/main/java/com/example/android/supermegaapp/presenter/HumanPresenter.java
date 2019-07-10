@@ -35,4 +35,9 @@ public class HumanPresenter implements HumanContract.Presenter {
             context.startActivity(intent);
         }
     }
+
+    @Override
+    public void closeButtonWasClicked() {
+        view.closeActivity();
+    }
 }
