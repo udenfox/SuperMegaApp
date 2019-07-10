@@ -1,5 +1,9 @@
 package com.example.android.supermegaapp.participants;
 
+import android.util.Log;
+
+import com.example.android.supermegaapp.MainActivity;
+
 import java.util.Objects;
 
 public final class AlexTarasyuk {
@@ -10,6 +14,7 @@ public final class AlexTarasyuk {
     public AlexTarasyuk() {
         this.name = "AlexTarasyuk";
         this.age = age;
+        Log.d(this.getClass().getCanonicalName(), "AlexTarasyuk instance is created");
     }
 
     public String getName() {
@@ -45,4 +50,7 @@ public final class AlexTarasyuk {
                 ", age=" + age +
                 '}';
     }
+
+
+
 }
