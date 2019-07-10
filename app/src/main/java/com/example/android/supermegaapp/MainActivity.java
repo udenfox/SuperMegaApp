@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> names;
+    HorpenkoDan Dan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ValadimirHaiba haiba = new ValadimirHaiba("Vladimir","Ivanovich");
+        Katerina katerina = new Katerina("Oblakevich");
+        Ihor ihor = new Ihor();
+        Cherevatenko dmitry = new Cherevatenko("something");
 
         FloatingActionButton fab = findViewById(R.id.fab);
 
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         names.add(new AlexTarasyuk().getName());
 
         Maxim maxim = new Maxim();
+        Dan = new HorpenkoDan(23);
 
     }
 
