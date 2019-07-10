@@ -1,7 +1,6 @@
 package com.example.android.supermegaapp;
 
 public class Igor {
-
     private int age;
 
     public Igor() {
