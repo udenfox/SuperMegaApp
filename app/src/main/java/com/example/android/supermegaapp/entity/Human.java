@@ -1,17 +1,48 @@
 package com.example.android.supermegaapp.entity;
 
-public class Human {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Human implements Parcelable {
     private String name;
     private String surname;
-    private int age;
+    private Integer age;
 
-    public Human() {
-    }
-
-    public Human(String name, String surname, int age) {
+    public Human(String name, String surname, Integer age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    protected Human(Parcel in) {
+        name = in.readString();
+        surname = in.readString();
+        if (in.readByte() == 0) {
+            age = null;
+        } else {
+            age = in.readInt();
+        }
+    }
+
+    public static final Creator<Human> CREATOR = new Creator<Human>() {
+        @Override
+        public Human createFromParcel(Parcel in) {
+            return new Human(in);
+        }
+
+        @Override
+        public Human[] newArray(int size) {
+            return new Human[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public String getName() {
@@ -30,11 +61,23 @@ public class Human {
         this.surname = surname;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public static Creator<Human> getCREATOR() {
+        return CREATOR;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeString(name);
+        parcel.writeString(surname);
+        if (age == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(age);
+        }
     }
 }
