@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         names = new ArrayList<>();
+        JanePlatonova janePlatonova=new JanePlatonova();
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
