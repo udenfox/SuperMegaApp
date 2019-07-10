@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Katerina katerina = new Katerina("Oblakevich");
         Ihor ihor = new Ihor();
         Cherevatenko dmitry = new Cherevatenko("something");
-
+        Jane jane=new Jane();
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
