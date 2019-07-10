@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.android.supermegaapp.participants.AlexTarasyuk;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         names.add("Michael");
         names.add("Michael");
         names.add("Michael");
+        names.add(new AlexTarasyuk().getName());
 
         Maxim maxim = new Maxim();
 

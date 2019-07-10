@@ -7,7 +7,7 @@ public final class AlexTarasyuk {
     private final String name;
     private int age;
 
-    public AlexTarasyuk(int age) {
+    public AlexTarasyuk() {
         this.name = "AlexTarasyuk";
         this.age = age;
     }
