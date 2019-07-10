@@ -1,7 +1,9 @@
-package com.example.android.supermegaapp;
+package com.example.android.supermegaapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.android.supermegaapp.R;
 
 public class FirstActivity extends AppCompatActivity {
 

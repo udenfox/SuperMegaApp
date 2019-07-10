@@ -4,4 +4,8 @@
     <string name="start_button">Start</string>
     <string name="ok_button">Ok</string>
     <string name="close_button">Close</string>
+    <string name="input_title_text">Enter information about the Human</string>
+    <string name="name_text">Name</string>
+    <string name="surname_text">Surname</string>
+    <string name="age_text">Age</string>
 </resources>
