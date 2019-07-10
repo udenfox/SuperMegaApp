@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Ihor ihor = new Ihor();
         Cherevatenko dmitry = new Cherevatenko("something");
         Jane jane=new Jane();
+        Igor igor = new Igor();
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
