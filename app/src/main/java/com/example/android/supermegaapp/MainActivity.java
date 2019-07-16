@@ -1,6 +1,7 @@
 package com.example.android.supermegaapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,9 +16,15 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+import static com.example.android.supermegaapp.R.id.fragment_output;
 
+public class MainActivity extends AppCompatActivity {
+    private InputFragment inputFragment;
+    private OutputFragment outputFragment;
     private ArrayList<String> names;
+    boolean inLandscapeMode;
+    MyObjectNameAge myObjectNameAge;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +34,21 @@ public class MainActivity extends AppCompatActivity {
 
         names = new ArrayList<>();
         JanePlatonova janePlatonova=new JanePlatonova();
+
+        inputFragment = (InputFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_input);
+
         final EditText editTextLastname =findViewById(R.id.lname);
         final EditText editTextname =findViewById(R.id.name);
         final EditText editTextage=findViewById(R.id.age);
         Button button=findViewById(R.id.inputsent);
+        inLandscapeMode = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
+        if (inLandscapeMode) {
+            outputFragment= (OutputFragment) getSupportFragmentManager().findFragmentById(fragment_output);
+            Log.d("main","Create output fragment");
+        }
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
@@ -40,11 +58,25 @@ public class MainActivity extends AppCompatActivity {
                                           sAge=String.valueOf(editTextage.getText());
 
                                           if (((sAge.length()>0)&(sLastname.length()>0))&(sName.length()>0)) {
-                                              MyObjectNameAge myObjectNameAge = new MyObjectNameAge(sLastname, sName, new Integer(sAge));
+                                              myObjectNameAge = new MyObjectNameAge(sLastname, sName, new Integer(sAge));
                                               Log.d("main",sLastname+sName+sAge);
-                                              Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-                                              intent.putExtra("Data", myObjectNameAge);
-                                              startActivity(intent);
+
+                                              if (inLandscapeMode) {
+                                                  Log.d("main","horisont");
+                                                  Log.d("main",myObjectNameAge.lastName);
+                                                  displayFIOAge(myObjectNameAge);
+                                              } else {
+                                                  Log.d("main","not__horisont");
+                                                  Intent viewIntent = new Intent(MainActivity.this, Main2Activity.class);
+                                                  viewIntent.putExtra("Data", myObjectNameAge);
+                                                  startActivity(viewIntent);
+                                              }
+
+
+
+                                              //Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                                              //intent.putExtra("Data", myObjectNameAge);
+                                              //startActivity(intent);
                                           }
                                       }
                                   }
@@ -58,7 +90,14 @@ public class MainActivity extends AppCompatActivity {
         names.add("Jake");
 
     }
-
+    public void displayFIOAge( MyObjectNameAge myObjectNameAge) {
+        if (inLandscapeMode) {
+            outputFragment = (OutputFragment) getSupportFragmentManager().findFragmentById(fragment_output);
+            Log.d("display",myObjectNameAge.name);
+            //if (outputFragment!=null){
+            outputFragment.displayFio(myObjectNameAge);//}
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
